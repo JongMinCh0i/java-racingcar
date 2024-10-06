@@ -5,7 +5,7 @@ import java.util.Random;
 public class RacingCar {
 
     private int distance = 0;
-    Random random = new Random();
+    private final Random random = new Random();
 
     public int drive(int bound, int condition) {
         if (canMove(bound, condition)) {
