@@ -9,7 +9,7 @@ public class RacingCar {
 
     public int drive(int bound, int condition) {
         if (canMove(bound, condition)) {
-            Move();
+            move();
         }
         return distance;
     }
@@ -22,7 +22,7 @@ public class RacingCar {
         return getRandomValue(bound) >= condition;
     }
 
-    private void Move() {
+    private void move() {
         distance += 1;
     }
 }
