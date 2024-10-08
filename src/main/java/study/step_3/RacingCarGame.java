@@ -1,5 +1,6 @@
 package study.step_3;
 
+import study.step_3.service.RaceCondition;
 import study.step_3.service.RacingCar;
 import study.step_3.ui.UiController;
 
@@ -17,7 +18,7 @@ public class RacingCarGame {
     public List<RacingCar> setUpRacingCar(int numberOfCars) {
         ArrayList<RacingCar> garage = new ArrayList<>();
         for (int i = 0; i < numberOfCars; i++) {
-            garage.add(new RacingCar());
+            garage.add(new RacingCar(new RaceCondition()));
         }
         return garage;
     }
@@ -50,7 +51,6 @@ public class RacingCarGame {
         if ((distance > 0)) {
             uiController.SkidMark(distance);
         }
-
     }
 
     public static void main(String[] args) {

@@ -16,12 +16,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class RacingCarTest {
 
     RacingCar racingCar;
-    Random random;
+    RaceCondition raceCondition;
 
     @BeforeEach
     void setUp() {
-        racingCar = new RacingCar();
-        random = new Random();
+        raceCondition = new RaceCondition();
+        racingCar = new RacingCar(raceCondition);
     }
 
     @DisplayName("전진하는 조건 값의 범위는 0부터 9까지이다.")
@@ -30,7 +30,7 @@ class RacingCarTest {
     void getRandomValue(int bound) {
 
         //given & when
-        int randomResult = random.nextInt(bound);
+        int randomResult = raceCondition.getRandomValue(bound);
         log.println("randomResult :" + randomResult);
 
         //then
@@ -44,7 +44,7 @@ class RacingCarTest {
     public void canMove(int bound, int standard) {
 
         //given
-        int randomResult = racingCar.getRandomValue(bound);
+        int randomResult = raceCondition.getRandomValue(bound);
         log.println("randomResult :" + randomResult + " standard :" + standard);
 
         //when & then
@@ -57,7 +57,7 @@ class RacingCarTest {
     public void cantMove(int bound, int standard) {
 
         //given
-        int randomResult = racingCar.getRandomValue(bound);
+        int randomResult = raceCondition.getRandomValue(bound);
         log.println("randomResult :" + randomResult + " standard :" + standard);
 
         //when & then
