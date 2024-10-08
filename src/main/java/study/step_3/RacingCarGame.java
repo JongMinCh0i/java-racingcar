@@ -51,7 +51,6 @@ public class RacingCarGame {
             uiController.SkidMark(distance);
         }
 
-        uiController.cantDrive(distance);
     }
 
     public static void main(String[] args) {
